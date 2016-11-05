@@ -1,7 +1,7 @@
 <?php
 namespace Reqres\Module\Messages;
 
-Class View  {
+trait View  {
     
     /**
      *
