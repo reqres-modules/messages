@@ -1,6 +1,11 @@
 <?php
 namespace Reqres\Module\Messages;
 
+/**
+ *
+ * @uses bower jquery-protocol-plugin
+ *
+ */
 trait View  {
     
     /**
