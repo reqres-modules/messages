@@ -1,17 +1,20 @@
 <?php
 namespace Reqres\Module\Messages;
 
-Class View  {
+use Reqres\Response;
+
+trait View  {
     
     /**
      *
      * Выводим ошибку
      *
      */
-    function message_error($error)
+    function mod_message_error($error)
     {
 
-        $this-> protocol_messages()
+        Response::json()
+            -> protocol('message')
             -> data([
                 'error' => $error,
                 'status' => 'error'
@@ -26,10 +29,11 @@ Class View  {
      * Выводим сообщение
      *
      */
-    function message_success($message)
+    function mod_message_success($message)
     {
         
-        $this-> protocol_messages()
+        Response::json()
+            -> protocol('message')
             -> data([
                 'message' => $message,
                 'status' => 'success'
@@ -44,10 +48,11 @@ Class View  {
      * Выводим заметку
      *
      */
-    function message_notice($notice)
+    function mod_message_notice($notice)
     {
         
-        $this-> protocol_messages()
+        Response::json()
+            -> protocol('message')
             -> data([
                 'notice' => $notice,
                 'status' => 'notice'
