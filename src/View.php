@@ -13,7 +13,7 @@ trait View  {
     function mod_message_error($error)
     {
 
-        Response::json()
+        Response::JSON()
             -> protocol('message')
             -> data([
                 'error' => $error,
@@ -32,7 +32,7 @@ trait View  {
     function mod_message_success($message)
     {
         
-        Response::json()
+        Response::JSON()
             -> protocol('message')
             -> data([
                 'message' => $message,
@@ -51,7 +51,7 @@ trait View  {
     function mod_message_notice($notice)
     {
         
-        Response::json()
+        Response::JSON()
             -> protocol('message')
             -> data([
                 'notice' => $notice,
