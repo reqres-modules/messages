@@ -14,10 +14,9 @@ trait View  {
     {
 
         Response::JSON()
-            -> protocol('message')
+            -> protocol('Message', 'Error')
             -> data([
                 'error' => $error,
-                'status' => 'error'
             ])
             -> respond();
 
@@ -33,10 +32,9 @@ trait View  {
     {
         
         Response::JSON()
-            -> protocol('message')
+            -> protocol('Message', 'Success')
             -> data([
-                'message' => $message,
-                'status' => 'success'
+                'message' => $message
             ])
             -> respond();
                 
@@ -52,10 +50,9 @@ trait View  {
     {
         
         Response::JSON()
-            -> protocol('message')
+            -> protocol('Message', 'Notice')
             -> data([
-                'notice' => $notice,
-                'status' => 'notice'
+                'notice' => $notice
             ])
             -> respond();
                 
