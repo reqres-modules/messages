@@ -13,12 +13,12 @@ trait View  {
     function mod_message_error($error)
     {
 
-        Response::JSON()
+        return Response::JSON()
             -> protocol('Message', 'Error')
             -> data([
                 'error' => $error,
             ])
-            -> respond();
+		;
 
     }
     
@@ -31,12 +31,12 @@ trait View  {
     function mod_message_success($message)
     {
         
-        Response::JSON()
+        return Response::JSON()
             -> protocol('Message', 'Success')
             -> data([
                 'message' => $message
             ])
-            -> respond();
+		;
                 
     }
 
@@ -49,12 +49,12 @@ trait View  {
     function mod_message_notice($notice)
     {
         
-        Response::JSON()
+        return Response::JSON()
             -> protocol('Message', 'Notice')
             -> data([
                 'notice' => $notice
             ])
-            -> respond();
+		;
                 
     }
     
@@ -90,8 +90,8 @@ trait View  {
     {
 
         // выводим подготовленный запрос
-        $this-> mod_message_confirm_response($question, $title, $yes, $no)
-            -> respond();
+        return $this-> mod_message_confirm_response($question, $title, $yes, $no);
         
-    }    
+    }
+    
 }
